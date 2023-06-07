@@ -1,0 +1,1 @@
+run http-server from the bash prompt in the directory you want to serve
