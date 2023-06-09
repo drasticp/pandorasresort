@@ -1,7 +1,7 @@
 x social buttons
 x button colors / square corners
 x clean up theme
-buttons linked
+x buttons linked
 next/prev arrows on gallery overlay
 embedded video
 email subscribe

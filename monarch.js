@@ -262,10 +262,18 @@ class GalleryScroller extends LitElement {
         this.imgs = slot.assignedElements({flatten: true});
         this.prevIcon = this.shadowRoot.querySelector("#prev");
         this.nextIcon = this.shadowRoot.querySelector("#next");
-        // wait for a second and then scroll first image to center
-        setTimeout(() => {
-            this.scroll(); 
-        }, 1000);
+        this.initScroller(); 
+    }
+
+    async initScroller() {
+        await this.updateComplete; 
+        var gallery = this.offsetWidth;
+        var img = this.imgs[0].width;
+        var main = this.shadowRoot.querySelector("#main");
+        if(img > gallery) {
+            var towidth = (img-gallery);
+            main.scrollTo(towidth, 0);
+        }
     }
 
     next() {
