@@ -262,6 +262,10 @@ class GalleryScroller extends LitElement {
         this.imgs = slot.assignedElements({flatten: true});
         this.prevIcon = this.shadowRoot.querySelector("#prev");
         this.nextIcon = this.shadowRoot.querySelector("#next");
+        // wait for a second and then scroll first image to center
+        setTimeout(() => {
+            this.scroll(); 
+        }, 1000);
     }
 
     next() {
@@ -361,14 +365,16 @@ class FlexPanel extends LitElement {
     render() {
         return html`
             <style>
-                :host { display:block; box-sizing:border-box; background-image:url(${this.background}); background-position:center; background-size:cover;  }
+                :host { margin:auto; display:flex; flex-wrap:wrap; max-width:var(--content-width); align-items:stretch; align-content:center; justify-content:center; gap:32px; box-sizing:border-box; background-image:url(${this.background}); background-position:center; background-size:cover;  }
                 :host([hidden]) { display:none; }
-                #core { margin:auto; flex-wrap:wrap; max-width:var(--content-width); height:100%; display:flex; align-items:stretch; align-content:center; justify-content:center; gap:32px; }
                 ::slotted(*) { flex: 1 0 auto; max-width:${this.itemwidth}; min-height:${this.itemheight} }
+
+                @media (max-width: 460px) {
+                    :host { padding:16px !important; gap:16px !important;  }
+                    ::slotted(*) { flex: 1 1 auto; max-width:100%; }
+                }
             </style>
-            <div id="core">
-                <slot></slot>
-            </div>
+            <slot></slot>
         `; 
     }
 
