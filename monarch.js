@@ -48,8 +48,9 @@ window.customElements.define("social-bar", SocialBar);
 class IconLink extends LitElement { 
 
     static properties = {
-        icon: { type: String }, 
-        href: { type: String }
+        icon: { type:String }, 
+        href: { type:String }, 
+        target: { type:String }
     };
 
     constructor() {
@@ -69,7 +70,10 @@ class IconLink extends LitElement {
     }
 
     onClick(e) {
-        window.open(this.href, "_blank");
+        if(this.target == undefined)
+            window.location = this.href; 
+        else
+            window.open(this.href, this.target);
     }
 }
 window.customElements.define("icon-link", IconLink);
@@ -77,7 +81,8 @@ window.customElements.define("icon-link", IconLink);
 class LinkButton extends LitElement {
 
     static properties = {
-        href: { type:String }
+        href: { type:String }, 
+        target: { type:String }
     };
 
     constructor() {
@@ -99,7 +104,10 @@ class LinkButton extends LitElement {
     }
 
     onClick(e) {
-        window.location = this.href;
+        if(this.target == undefined)
+            window.location = this.href; 
+        else
+            window.open(this.href, this.target);
     }
 }
 window.customElements.define("link-button", LinkButton);
