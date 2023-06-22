@@ -95,7 +95,7 @@ class LinkButton extends LitElement {
                 <style>
                     :host { display:inline-block; cursor:pointer; }
                     :host([hidden]) { display:none; }
-                    div { user-select:none; transition:color 1s, background-color 1s; text-align:center; color:var(--action-inverse); width:100%; padding: 12px 12px 12px 12px; font-size:var(--button-font-size); font-weight:var(--button-font-weight); border:none; background-color:var(--action); box-sizing: border-box; }
+                    div { user-select:none; transition:color 1s, background-color 1s; text-align:center; color:var(--action-inverse); width:100%; padding: 12px 12px 12px 12px; font-size:var(--button-font-size); font-weight:var(--button-font-weight); border:var(--button-border); background-color:var(--action); box-sizing: border-box; }
                     div:focus { outline:none; }
                     div:hover { background-color: var(--action-inverse); color: var(--action); }
                 </style>
@@ -393,7 +393,6 @@ class FlexPanel extends LitElement {
             <slot></slot>
         `; 
     }
-
 }
 window.customElements.define("flex-panel", FlexPanel);
 
@@ -445,3 +444,65 @@ class BrightIcon extends LitElement {
     }
 }
 window.customElements.define("bright-icon", BrightIcon);
+
+class EmailSubscribe extends LitElement {
+
+    static get properties() {
+        return {
+            organizationkey: { type:String }
+        }
+    }
+
+    render() {
+        return html`
+            <style>
+                ::host {  }
+                #inputarea { display:flex; width:100%; }
+                input { flex: 1 1 auto; padding:8px 8px; font-size:var(--input-font-size); font-family:var(--font-family); color:#303030; border:var(--input-border); border-radius:var(--input-radius); box-sizing:border-box; margin: 0px 4px 4px 0px; background:var(--input-background); }
+                input:focus, textarea:focus, select:focus { border: 1px solid gray; outline:none; }
+                button { user-select:none; transition:color 1s, background-color 1s; background-color:var(--action); text-align:center; color:var(--action-inverse); padding:8px 8px; flex:0 0 auto;  font-size:var(--button-font-size); font-weight:var(--button-font-weight); border:var(--button-border); }
+                button:hover { background-color: var(--action-inverse); color: var(--action); }
+                #aftertext { display:none; padding:8px; font-size:var(--input-font-size); font-family:var(--font-family); text-align:center; }
+            </style>
+            <div id="inputarea">
+                <input type="email" placeholder="Email Address" id="email"/>
+                <button @click="${this.onClick}">Subscribe</button>
+            </div>
+            <div id="aftertext">Thank You For Subscribing!</div>
+        `;
+    }
+
+    onClick() {
+        var email = this.renderRoot.querySelector("#email").value; 
+        var referrer = document.referrer;
+        this.renderRoot.querySelector("#inputarea").style.opacity = "0.2";
+        AppUtil.addSubscriber(this.organizationid, email, referrer).then(sub => {
+            this.renderRoot.querySelector("#inputarea").style.display = "none";
+            this.renderRoot.querySelector("#aftertext").style.display = "block";
+        });
+    }
+}
+window.customElements.define("email-subscribe", EmailSubscribe);
+
+export class AppUtil {
+
+    // handle errors in the response stream so they can be caught
+    // otherwise 401,500 errors, etc don't catch
+    // this works with the C# ErrorResponse result object
+    // example:  .then(this.handleErrors)
+    static handleErrors(res) {
+        if (!res.ok) {
+            return res.json().then(e => { throw Error(e.message); });
+        } else { 
+            return res; 
+        }
+    }
+
+    static async addSubscriber(organizationkey, email, referrer) {
+        const apibase = 'https://lusciousstudios.azurewebsites.net/api';
+
+        return fetch(`${apibase}/subscribe?organizationkey=${organizationkey}&email=${email}&referrer=${referrer}`)
+        .then(this.handleErrors)
+        .then(res => res.json()); 
+    }
+}

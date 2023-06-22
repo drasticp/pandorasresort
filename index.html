@@ -48,6 +48,8 @@
    <link rel="apple-touch-icon" href="images/favicon.svg" type="image/svg+xml"/>
    <title>Pandora's Resort | Tennessee's #1 Clothing Optional Lifestyle Resort</title>
    <style>
+
+
       html {
          --font-family: Roboto, Arial, Helvetica, sans-serif; 
          --content-width: 1000px;
@@ -55,15 +57,20 @@
          --background-inverse: white; 
          --action: darkred; 
          --action-inverse: white;
-         --input-border: 1px solid gray; 
-         --input-size: 36px; 
-         --input-radius: 0px; 
-         --input-background: white; 
          --icon-size: 32px; 
          --body-font-size: 14px;
          --body-font-weight:500;
+
          --button-font-size: 20px; 
          --button-font-weight:500;
+         --button-border: 1px solid gray;
+         
+         --input-font-size:20px; 
+         --input-font-weight:500; 
+         --input-border: 1px solid gray; 
+
+         --input-radius: 0px; 
+         --input-background: white; 
       }
 
       nav-bar.desktop a { margin:16px; font-size: 18px;  }
@@ -76,6 +83,7 @@
       social-bar.mobile icon-link { background:var(--action-inverse); fill:var(--action); }
       paper-card { background-color: dimgray; }
       link-button { min-width:250px; }
+      email-subscribe { min-width: 340px;}
 
    </style>
    <script src="monarch.js" type="module"></script>
@@ -202,7 +210,7 @@
    <flex-panel>
       <paper-card justify="center">
          <h2>Join Our Mailing List</h2>
-         <mailing-list aftertext="Thanks for subscribing!">Subscribe</mailing-list>
+         <email-subscribe organizationid="3548abad-b6ce-49df-9a8c-b2acbc98530c"></email-subscribe>
       </paper-card>
    </flex-panel>
    <flex-panel>
