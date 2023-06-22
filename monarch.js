@@ -476,7 +476,7 @@ class EmailSubscribe extends LitElement {
         var email = this.renderRoot.querySelector("#email").value; 
         var referrer = document.referrer;
         this.renderRoot.querySelector("#inputarea").style.opacity = "0.2";
-        AppUtil.addSubscriber(this.organizationid, email, referrer).then(sub => {
+        AppUtil.addSubscriber(this.organizationkey, email, referrer).then(sub => {
             this.renderRoot.querySelector("#inputarea").style.display = "none";
             this.renderRoot.querySelector("#aftertext").style.display = "block";
         });
@@ -500,7 +500,6 @@ export class AppUtil {
 
     static async addSubscriber(organizationkey, email, referrer) {
         const apibase = 'https://lusciousstudios.azurewebsites.net/api';
-
         return fetch(`${apibase}/subscribe?organizationkey=${organizationkey}&email=${email}&referrer=${referrer}`)
         .then(this.handleErrors)
         .then(res => res.json()); 
