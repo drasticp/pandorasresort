@@ -2,7 +2,9 @@ x social buttons
 x button colors / square corners
 x clean up theme
 x buttons linked
-next/prev arrows on gallery overlay
-embedded video
-email subscribe
-deploy to azure
+x next/prev arrows on gallery overlay
+x embedded video
+x email subscribe
+x deploy to azure
+social icons
+test subscribe

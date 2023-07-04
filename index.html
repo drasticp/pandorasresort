@@ -47,53 +47,84 @@
    <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml"/>
    <link rel="apple-touch-icon" href="images/favicon.svg" type="image/svg+xml"/>
    <title>Pandora's Resort | Tennessee's #1 Clothing Optional Lifestyle Resort</title>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
    <style>
-
-
       html {
-         --font-family: Roboto, Arial, Helvetica, sans-serif; 
          --content-width: 1000px;
-         --background: black; 
-         --background-inverse: white; 
-         --action: darkred; 
-         --action-inverse: white;
-         --icon-size: 32px; 
-         --body-font-size: 14px;
-         --body-font-weight:500;
 
-         --button-font-size: 20px; 
-         --button-font-weight:500;
-         --button-border: 1px solid gray;
-         
-         --input-font-size:20px; 
-         --input-font-weight:500; 
-         --input-border: 1px solid gray; 
+         --body-font: 100 normal 1em Roboto,Arial,Helvetica,sans-serif; 
+         --body-background: black; 
+         --body-inverse: white;
 
-         --input-radius: 0px; 
+         --button-font: 500 normal 1em Roboto, Arial, Helvetica, sans-serif;
+         --button-background: darkred;
+         --button-inverse: white;
+         --button-border: 1px solid transparent;
+         --button-radius: 0px; 
+         --button-padding: 8px 16px;
+         --button-text-transform: uppercase; 
+
+         --primary-background: #6A8244; 
+         --primary-inverse: #F5F4EF; 
+         --primary-border: 1px solid transparent;
+
+         --label-font: normal smaller Roboto, sans-serif; 
+         --label-background: #BFBAAC; 
+         --label-inverse: #656055;
+         --label-border: none; 
+         --label-radius: 0px; 
+         --label-padding: 0px 8px;
+         --label-text-transform: lowercase; 
+
+         --input-font: normal 20px Roboto, sans-serif;  
          --input-background: white; 
-      }
+         --input-inverse: dimgray; 
+         --input-border: 1px solid gray; 
+         --input-radius: 0px; 
+         --input-padding: 8px 8px;
 
-      nav-bar.desktop a { margin:16px; font-size: 18px;  }
-      nav-bar.mobile a { margin:16px; font-size: 18px;  }
-      nav-bar img { padding:24px; }
-      flex-panel { margin-bottom:32px; }
-      social-bar.desktop { flex-direction:column; position:fixed; right:16px; top:45%; }
+         --shadow: 0px 0px 3px #303030;
+         --alert-color:#8D3234;
+         --caution-color: #CCA031; 
+      }
+      @font-face {
+         font-family: 'HeaderFont';
+         src: url('MuseoW05-700.woff');
+         font-weight: normal;
+         font-style: normal;
+      } 
+      
+      bright-nav a { margin:16px; font-size: 18px; font-weight: 500; }
+      bright-nav img { padding:24px; }
+      bright-section { margin-bottom:32px; }
+      social-bar.desktop { flex-direction:column; position:fixed; right:16px; top:50%; translate:0%, -50%; }
       social-bar.desktop icon-link { background:var(--background-inverse); }
       social-bar.mobile { flex-direction:row; padding-top:32px; }
-      social-bar.mobile icon-link { background:var(--action-inverse); fill:var(--action); }
-      paper-card { background-color: dimgray; }
+      social-bar.mobile icon-link { background:var(--button-inverse); fill:var(--button-background); }
       link-button { min-width:250px; }
       email-subscribe { min-width: 340px;}
-
+      bright-card { background-color: rgb(43, 42, 42); }
+      bright-card::part(footer) { justify-content:center; }
+      h1,h2 { font-family:HeaderFont,serif; }
+      p, pre { line-height: 1.8 !important;}
+      video { border: 4px solid darkred; max-width:100%; }
+      hr { min-width:100%; border:1px solid #303030; box-sizing:border-box; margin:16px 0px; }
+      bright-card.col2 { min-width:100%; }
+      bright-card.col2::part(body) { margin:0px -8px; display:flex; flex-wrap:wrap; justify-content: space-evenly; }
+      bright-card.col2 div { flex:0 1 340px; }
+      bright-card.col2 div pre { word-break:keep-all; }
+      bright-card.col2::part(header) { flex-direction:column; }
    </style>
+
+   <script src="brightjs/bright.js" type="module"></script>
+   <link rel="stylesheet" href="brightjs/bright.css"/>   
    <script src="monarch.js" type="module"></script>
-   <link rel="stylesheet" href="monarch.css"> 
 
 </head>
 <body>
 
-   <nav-bar>
-      <img slot="left" src="images/pandoraslogoinverse.webp" width="250px"/>
+   <bright-nav>
+      <img slot="logo" src="images/logo.webp" width="250px"/>
       <a href="#events">Events</a>
       <a href="#rates">Rates</a>
       <a href="#gallery">Gallery</a>
@@ -104,117 +135,225 @@
          <icon-link icon="youtube" href="https://youtube.com" target="_blank"></icon-link>
          <icon-link icon="tiktok" href="https://tiktok.com" target="_blank"></icon-link>
       </social-bar>
-   </nav-bar>
+   </bright-nav>
 
-   <splash-panel background="images/backgroundkiss.webp">
+   <bright-section background="images/backgroundkiss.webp" style="height:100%">
+      <div style="max-width:600px;text-align:center;">
       <h1>Tennessee's #1 Clothing Optional Lifestyle Resort Destination</h1>
-      <link-button href="#video">Learn More</link-button>
-   </splash-panel>
+      <link-button href="tel:931-981-3714">Call 931.981.3714</link-button>
+      </div>
+   </bright-section>
+
+   <bright-section>
+      <h2>Welcome To Pandora's Resort</h2>
+      <p>Introducing Pandora's Resort: under new ownership and fully transformed from Pandora's Forest. We're open and excited to showcase our improvements. The Grand Re-Opening on Memorial Day was a hit and resort updates include a new 'after-party' room, clubhouse upgrades, renovated cabins, chalets, bathhouse, and outdoor showers. More enhancements are happening daily. Join us for themed parties every weekend and check out the ongoing improvements at Pandora's Resort. Make a reservation now and experience it firsthand.</p>
+   </bright-section>
+
+   <bright-section>
+      <video src="teaser.mp4" controls></video>
+   </bright-section>
 
    <video-panel id="video" imgsrc="images/videotitle.jpg">
       <source src="pandorastour.mp4" type="video/mp4">
    </video-panel>
 
-   <flex-panel id="info" item-width="280px" item-height="300px">
-      <paper-card>
-         <h2>Accommodations</h2>
+   <bright-section id="info" item-width="280px" item-height="400px">
+      <bright-card>
+         <h2 slot="header">Accommodations</h2>
          <p>Bring your RV or stay in one of several unique glamping options to choose from. Call us to reserve a site, cabin, chalet, or yurt. We fill up fast - especially on holiday weekends!</p>
-         <link-button slot="bottom" href="tel://931-277-1258">Reservations</link-button>
-      </paper-card>
-      <paper-card>
-         <h2>Amenities</h2>
+         <link-button slot="footer" href="tel://931-277-1258">Reservations</link-button>
+      </bright-card>
+      <bright-card>
+         <h2 slot="header">Amenities</h2>
          <p>Take a dip in our heated pool or relax in the hot tub. Soak in the rays on our sun deck. Grab a bite at the poolside cafe. Enjoy a campfire or game of cornhole with friends.</p>
-         <link-button slot="bottom" href="#gallery">Gallery</link-button>
-      </paper-card>
-      <paper-card>
-         <h2>Night Club</h2>
+         <link-button slot="footer" href="#gallery">Gallery</link-button>
+      </bright-card>
+      <bright-card>
+         <h2 slot="header">Night Club</h2>
          <p>Dance the night away! Enjoy a sexy night to remember at our weekend themed parties. Check our event section for our upcoming party themes. On-premise. BYOB - so bring your favorite beverage.</p>
-         <link-button slot="bottom" href="#events">Events</link-button>
-      </paper-card>
-   </flex-panel>
+         <link-button slot="footer" href="#events">Events</link-button>
+      </bright-card>
+   </bright-section>
 
 
-   <flex-panel id="events" item-width="340px">
+   <bright-section id="events" item-width="340px">
       <img src="images/20230526.webp"/>
-      <paper-card justify="center">
-         <h2>This Weekend at Pandora's Resort</h2>
+      <bright-card justify="center">
+         <h2 slot="header">This Weekend at Pandora's Resort</h2>
          <p style="text-align:left">Join us for our Grand Re-Opening on Memorial Day Weekend!  Fun to be had ALL WEEKEND LONG! Dance the night away! Then enjoy a sexy night to remember at the dance club and after party in our newly renovated on-premise facilities. Clubhouse, bathhouse, cabins, and fun 'after-party' facilities are all remodeled and ready to be filled with laughter and friendship! BYOB - bring your favorite beverage.</p>
-         <link-button slot="bottom" href="#reservations">Reservations</link-button>
-      </paper-card>
-   </flex-panel>
+         <link-button slot="footer" href="#reservations">Reservations</link-button>
+      </bright-card>
+   </bright-section>
 
-   <flex-panel id="upcoming">
+   <bright-section id="upcoming">
       <h2>Upcoming Events</h2>
-      <gallery-scroller mode="scroller" item-width="350px" gap="16px">
+      <bright-gallery-scroller mode="scroller" item-width="350px" gap="16px">
          <img src="images/20230602.webp"/>
          <img src="images/20230603.webp"/>
          <img src="images/staytuned.webp"/>
-      </gallery-scroller>
-   </flex-panel>
+      </bright-gallery-scroller>
+   </bright-section>
 
-   <flex-panel id="rates" background="images/backgroundbwsexy.webp" item-width="340px" style="padding:32px">
-      <paper-card>
-         <h2>Memberships</h2>
-         <pre>
-            ***Holiday Rates will differ***
-            Yearly Couples Membership: $1250
-            Day fee (Couples): $70
-            Day fee (Females): $35
-            Day fee (Males - MUST BE SPONSORED): $70
-         </pre>
-         <link-button slot="bottom" href="tel://931-277-1258">Call for More Info</link-button>
-      </paper-card>
-      <paper-card>
-         <h2>Accomodations</h2>
-         <pre>
-            ***Holiday Rates will differ***
-            Daily RV spot: $70
-            Monthly RV spot: $500 +electric
-            Yearly RV spots (MUST BE A MEMBER): $385 to $415 +electric
-         </pre>
-         <link-button slot="bottom" href="tel://931-277-1258">Reservations</link-button>
-      </paper-card>
-   </flex-panel>
+   <bright-section id="rates" background="images/backgroundbwsexy.webp" item-width="340px" style="padding:32px 0px;">
+      <bright-card class="col2">
+         <h2 slot="header">Memberships & Day Fees</h2>
+         <center slot="header">* Holiday Rates Will Vary *</center>
+         <div>
+            <b>Day Fees:</b>
+            <pre>
+            Per Couple&nbsp;&nbsp;&bull;&nbsp;&nbsp;$70/day
+            Single Females&nbsp;&nbsp;&bull;&nbsp;&nbsp;$35/day
+            Single Males&nbsp;&nbsp;&bull;&nbsp;&nbsp;$70/day * 
+            </pre>
+            <b>Annual Memberships:</b>
+            <pre>
+            Couples&nbsp;&nbsp;&bull;&nbsp;&nbsp;$1250/year * 
+            Single Males&nbsp;&nbsp;&bull;&nbsp;&nbsp;$1250/year * 
+            Single Females&nbsp;&nbsp;&bull;&nbsp;&nbsp;$625/year
+            </pre>
+         </div>
+         <div>
+            <b>Restrictions</b>
+            <pre>
+            * All single males must be sponsored by a member couple without exception. 
+            
+            * Couples memberships allow for the male to visit 3 times without a female partner.
+            </pre>
+            <b>*** SPECIALS ***</b>
+            <pre>
+            Sunday Stay After Noon&nbsp;&nbsp;&bull;&nbsp;&nbsp;$40/couple
+            Party Pass (Fri Or Sat Night)&nbsp;&nbsp;&bull;&nbsp;&nbsp;$50/couple
+            Half Price Humpday&nbsp;&nbsp;&bull;&nbsp;&nbsp;50% off day fees
+            </pre>
+         </div>
+         
+         <link-button slot="footer" href="tel://931-277-1258">Call for More Info</link-button>
+      </bright-card>
+      <bright-card class="col2">
+         <h2 slot="header">Accomodations</h2>
+         <center slot="header">* Holiday Rates Will Vary *</center>
+         <div>
+            <b>Cabins:</b>
+            <pre>
+            Thu thru Sat&nbsp;&nbsp;&bull;&nbsp;&nbsp;$100/night + day fees
+            Sun thru Wed&nbsp;&nbsp;&bull;&nbsp;&nbsp;$60/night + day fees
+            (No Smoking, No Pets in Cabins)
+            </pre>
+            <b>Chalets:</b>
+            <pre>
+            Thu thru Sat&nbsp;&nbsp;&bull;&nbsp;&nbsp;$80/night + day fees
+            Sun thru Wed&nbsp;&nbsp;&bull;&nbsp;&nbsp;$50/night + day fees
+            (No Smoking, No Pets in Chalets)
+            </pre>
+            <b>Tents:</b>
+            <pre>
+            Bring Your Own&nbsp;&nbsp;&bull;&nbsp;&nbsp;$40/night + day fees
+            Glamping Yurts&nbsp;&nbsp;&bull;&nbsp;&nbsp;$85/night + day fees
+            </pre>
+         </div>
+         <div>
+            <b>RV Sites:</b>
+            <pre>
+            Daily&nbsp;&nbsp;&bull;&nbsp;&nbsp;$70/night + day fees
+            Monthly&nbsp;&nbsp;&bull;&nbsp;&nbsp;$500/mo + $2/day elec + day fees
+            30 or 50 amp full hookup available
+            </pre>
+            <b>Annual (All Year) RV Sites:</b>
+            <pre>
+            Standard&nbsp;&nbsp;&bull;&nbsp;&nbsp;$400/mo + $2/day electric
+            Premium&nbsp;&nbsp;&bull;&nbsp;&nbsp;$415/mo + $2/day electric
+            (Annual Membership Required)
+            </pre>
+            <b>*** SPECIALS ***</b>
+            <pre>
+            Half Price Humpday&nbsp;&nbsp;&bull;&nbsp;&nbsp;50% off Accommodations on Wednesday!
+            </pre>
+            <pre>
+            3 Day Special&nbsp;&nbsp;&bull;&nbsp;&nbsp;Mon thru Wed Cabin & Day fees for $300!
+            </pre>
+         </div>
 
-   <flex-panel id="gallery">
+         <link-button slot="footer" href="tel://931-277-1258">Reservations</link-button>
+      </bright-card>
+   </bright-section>
+
+   <bright-section id="gallery">
       <h2>Gallery</h2>
-      <gallery-grid item-width="30%" gap="16px">
-         <img src="images/gallery/pool.webp" caption="Heated Pool" description="Put long notes here."/>
-         <img src="images/gallery/hottub.webp" caption="Big Hot Tub"/>
-         <img src="images/gallery/clubhouse1.webp" caption="Clubhouse"/>
-         <img src="images/gallery/clubhouse2.webp" caption="Clubhouse"/>
-         <img src="images/gallery/clubhouse3.webp" caption="Clubhouse"/>
-         <img src="images/gallery/playroom1.webp" caption="After Party Room"/>
-         <img src="images/gallery/playroom2.webp" caption="After Party Room"/>
-         <img src="images/gallery/playroom3.webp" caption="After Party Room"/>
-         <img src="images/gallery/cabin1.webp" caption="Cabin"/>
-         <img src="images/gallery/cabin2.webp" caption="Cabin Interior"/>
-         <img src="images/gallery/chalet1.webp" caption="Chalet"/>
-         <img src="images/gallery/rvspot1.webp" caption="RV Spot"/>
-      </gallery-grid>
-   </flex-panel>
+      <bright-gallery-grid>
+         <figure>
+            <img src="images/gallery/pool.webp"/>
+            <figcaption>Large Heated Pool</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/hottub.webp"/>
+            <figcaption>Big Hot Tub</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/clubhouse1.webp"/>
+            <figcaption>Clubhouse With Large Dancefloor</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/clubhouse2.webp"/>
+            <figcaption>Clubhouse BYOB Bar</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/clubhouse3.webp"/>
+            <figcaption>Clubhouse Pool Table and Darts</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/playroom1.webp"/>
+            <figcaption>New After Party Room With Big Queen Beds</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/playroom2.webp"/>
+            <figcaption>New After Party Room</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/playroom3.webp"/>
+            <figcaption>New After Party Room BDSM Equpment and St. Andrew's Cross</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/cabin1.webp"/>
+            <figcaption>Cozy Modern Cabins</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/cabin2.webp"/>
+            <figcaption>Cozy Cabin Interior</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/chalet1.webp"/>
+            <figcaption>Rustic Chalets</figcaption>
+         </figure>
+         <figure>
+            <img src="images/gallery/rvspot1.webp" caption="RV Spot"/>
+            <figcaption>Full Hookup RV Spots</figcaption>
+         </figure>
+      </bright-gallery-grid>
+   </bright-section>
 
   
-   <flex-panel justify="center" item-width="340px" background="images/backgroundredsexy.webp" style="padding:32px">
-      <paper-card>
-         <h2>Contact Us</h2>
+   <bright-section justify="center" item-width="340px" background="images/backgroundredsexy.webp" style="padding:32px 0px;">
+      <bright-card>
+         <h2 slot="header">Contact Us</h2>
          <pre>
-            Address: 80 Timberline Rd., Crossville, TN 38571
+            80 Timberline Rd. 
+            Crossville, TN 38571
+
             Call or Text: 931.277.1258
             Email: pandorasresort@yahoo.com
          </pre>
-         <link-button slot="bottom" href="tel://931-277-1258" style="margin-bottom:8px">Call or Text Now</link-button>
-         <link-button slot="bottom" href="pandorasresort@yahoo.com">Send Us A Message</link-button>
-      </paper-card>
-   </flex-panel>
-   <flex-panel>
-      <paper-card justify="center">
+         <link-button slot="footer" href="tel://931-277-1258" style="margin-bottom:8px">Call or Text Now</link-button>
+         <link-button slot="footer" href="pandorasresort@yahoo.com">Send Us A Message</link-button>
+      </bright-card>
+   </bright-section>
+   <bright-section>
+      <bright-card justify="center">
          <h2>Join Our Mailing List</h2>
          <email-subscribe organizationkey="pandorasresort"></email-subscribe>
-      </paper-card>
-   </flex-panel>
-   <flex-panel>
+      </bright-card>
+   </bright-section>
+   <bright-section>
       <span style="flex:0 0 auto">© 2023 Created by Alicia Archer, LusciousStudios.com</span>
-   </flex-panel>
+   </bright-section>
 </body>
 </html>
