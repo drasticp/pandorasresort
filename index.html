@@ -97,10 +97,11 @@
       bright-nav a { margin:16px; font-size: 18px; font-weight: 500; }
       bright-nav img { padding:24px; }
       bright-section { margin-bottom:32px; }
+      social-bar icon-link { padding:4px; }
       social-bar.desktop { flex-direction:column; position:fixed; right:16px; top:50%; translate:0%, -50%; }
-      social-bar.desktop icon-link { background:var(--background-inverse); }
+      social-bar.desktop icon-link { background:var(--body-inverse);fill:var(--body-background); }
       social-bar.mobile { flex-direction:row; padding-top:32px; }
-      social-bar.mobile icon-link { background:var(--button-inverse); fill:var(--button-background); }
+      social-bar.mobile icon-link { background:var(--button-background); fill:var(--button-inverse); }
       link-button { min-width:250px; }
       email-subscribe { min-width: 340px;}
       bright-card { background-color: rgb(43, 42, 42); }
@@ -114,6 +115,7 @@
       bright-card.col2 div { flex:0 1 340px; }
       bright-card.col2 div pre { word-break:keep-all; }
       bright-card.col2::part(header) { flex-direction:column; }
+      
    </style>
 
    <script src="brightjs/bright.js" type="module"></script>
@@ -130,10 +132,8 @@
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
       <social-bar>
-         <icon-link icon="facebook" href="https://facebook.com" target="_blank"></icon-link>
-         <icon-link icon="google" href="https://google.com" target="_blank"></icon-link>
-         <icon-link icon="youtube" href="https://youtube.com" target="_blank"></icon-link>
-         <icon-link icon="tiktok" href="https://tiktok.com" target="_blank"></icon-link>
+         <icon-link icon="facebook" href="https://www.facebook.com/Pandorasresort" target="_blank"></icon-link>
+         <icon-link icon="insta" href="https://www.instagram.com/pandorasresort/" target="_blank"></icon-link>
       </social-bar>
    </bright-nav>
 
