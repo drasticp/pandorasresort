@@ -1,4 +1,4 @@
-import {LitElement, html} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
+import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@2/core/lit-core.min.js';
 
 export class ResizeController {
     host; 
@@ -144,26 +144,25 @@ window.customElements.define("splash-panel", SplashPanel);
 
 class EmailSubscribe extends LitElement {
 
-    static get properties() {
-        return {
-            organizationkey: { type:String }
-        }
+    static properties = {
+        organizationkey: { type:String }
     }
+
+    static styles = css`
+        :host { display:flex; justify-content:center; box-sizing:border-box;  }
+        #inputarea { display:flex; width:100%; max-width:600px; flex-wrap:wrap; gap:4px; box-sizing:border-box;  }
+        input { flex: 1 1 300px; padding:var(--input-padding); font:var(--input-font); color:var(--input-inverse); border:var(--input-border); border-radius:var(--input-radius); box-sizing:border-box; background:var(--input-background); }
+        button { flex: 1 1 200px; user-select:none; transition:color 1s, background-color 1s; background:var(--button-background); color:var(--button-inverse); padding:var(--button-padding); font:var(--button-font); border:var(--button-border); }
+        input:focus { outline:none; }
+        button:hover { background:var(--button-inverse); color:var(--button-background); }
+        #aftertext { display:none; padding:8px; font:var(--body-font); }
+    `;
 
     render() {
         return html`
-            <style>
-                ::host {  }
-                #inputarea { display:flex; width:100%; }
-                input { flex: 1 1 auto; padding:8px 8px; font-size:var(--input-font-size); font-family:var(--font-family); color:#303030; border:var(--input-border); border-radius:var(--input-radius); box-sizing:border-box; margin: 0px 4px 4px 0px; background:var(--input-background); }
-                input:focus, textarea:focus, select:focus { border: 1px solid gray; outline:none; }
-                button { user-select:none; transition:color 1s, background-color 1s; background-color:var(--action); text-align:center; color:var(--action-inverse); padding:8px 8px; flex:0 0 auto;  font-size:var(--button-font-size); font-weight:var(--button-font-weight); border:var(--button-border); }
-                button:hover { background-color: var(--action-inverse); color: var(--action); }
-                #aftertext { display:none; padding:8px; font-size:var(--input-font-size); font-family:var(--font-family); text-align:center; }
-            </style>
             <div id="inputarea">
                 <input type="email" placeholder="Email Address" id="email"/>
-                <button @click="${this.onClick}">Subscribe</button>
+                <button @click="${this.onClick}" class="primary">Subscribe</button>
             </div>
             <div id="aftertext">Thank You For Subscribing!</div>
         `;
