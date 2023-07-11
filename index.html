@@ -60,12 +60,12 @@
          --body-background: black; 
          --body-inverse: white;
 
-         --button-font: 500 normal 1em Roboto, Arial, Helvetica, sans-serif;
+         --button-font: 500 normal 12pt Roboto, Arial, Helvetica, sans-serif;
          --button-background: darkred;
          --button-inverse: white;
          --button-border: 1px solid transparent;
          --button-radius: 0px; 
-         --button-padding: 8px 16px;
+         --button-padding: 16px 16px;
          --button-text-transform: uppercase; 
 
          --primary-background: #6A8244; 
@@ -85,7 +85,7 @@
          --input-inverse: dimgray; 
          --input-border: 1px solid gray; 
          --input-radius: 0px; 
-         --input-padding: 8px 8px;
+         --input-padding: 16px 8px;
 
          --content-width: 1000px;
          --shadow: 0px 0px 3px #303030;
@@ -113,6 +113,7 @@
       bright-card.col2 div pre { word-break:keep-all; }
       bright-card.col2::part(header) { flex-direction:column; }
       bright-gallery-grid.desktop { grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); }
+      #splash h1 { padding-bottom:64px; line-height:1.6; }
    </style>
 
    <script src="brightjs/bright.js" type="module"></script>
@@ -123,7 +124,7 @@
 <body>
 
    <bright-nav>
-      <img slot="logo" src="images/logo.webp" width="250px"/>
+      <img slot="logo" src="images/logo.webp" width="300px"/>
       <a href="#events">Events</a>
       <a href="#rates">Rates</a>
       <a href="#gallery">Gallery</a>
@@ -134,7 +135,7 @@
       </social-bar>
    </bright-nav>
 
-   <bright-section background="images/backgroundkiss.webp" style="height:100%">
+   <bright-section id="splash" background="images/backgroundkiss.webp" style="height:100%">
       <div style="max-width:600px;text-align:center;">
       <h1>Tennessee's #1 Clothing Optional Lifestyle Resort Destination</h1>
       <link-button href="tel:931-981-3714">Call 931.981.3714</link-button>
@@ -355,13 +356,13 @@
    <bright-section id="contact" justify="center" item-width="340px" background="images/backgroundredsexy.webp" style="padding:32px 0px;">
       <bright-card>
          <h2 slot="header">Contact Us</h2>
-         <pre>
-            80 Timberline Rd. 
-            Crossville, TN 38571
-
-            Call or Text: 931.277.1258
-            Email: pandorasresort@yahoo.com
-         </pre>
+            <div style="text-align:center">
+            80 Timberline Rd. <br/>
+            Crossville, TN 38571<br/>
+            <br/>
+            Call or Text: 931.277.1258<br/>
+            pandorasresort@yahoo.com<br/>
+            </div>
          <link-button slot="footer" href="tel:931-277-1258" style="margin-bottom:8px">Call or Text Now</link-button>
          <link-button slot="footer" href="mailto:pandorasresort@yahoo.com">Send Us A Message</link-button>
       </bright-card>
