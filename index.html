@@ -114,6 +114,9 @@
       bright-card.col2::part(header) { flex-direction:column; }
       bright-gallery-grid.desktop { grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); }
       #splash h1 { padding-bottom:64px; line-height:1.6; }
+      #partners img { max-height: 100%; }
+      #partners a { flex:0 0 auto; }
+      #partners::part(content) { justify-content: space-between; }
    </style>
 
    <script src="brightjs/bright.js" type="module"></script>
@@ -372,6 +375,12 @@
          <h2 slot="header">Join Our Mailing List</h2>
          <email-subscribe campaignkey="459A32E05F59960F"></email-subscribe>
       </bright-card>
+   </bright-section>
+   <h2>Proud Partners</h2>
+   <bright-section item-height="150px" id="partners">
+      <a href="https://sls.com" target="_blank"><img src="images/partner-sls.webp"/></a>
+      <a href="https://sdc.com" target="_blank"><img src="images/partner-sdc.webp"/></a>
+      <a href="https://fetlife.com" target="_blank"><img src="images/partner-fetlife.webp"/></a>
    </bright-section>
    <bright-section>
       <span style="flex:0 0 auto">© 2023 Created by Alicia Archer, LusciousStudios.com</span>
