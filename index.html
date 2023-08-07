@@ -51,7 +51,7 @@
    <style>
       @font-face {
          font-family: 'HeaderFont';
-         src: url('MuseoW05-700.woff');
+         src: url('fonts/MuseoW05-700.woff');
          font-weight: normal;
          font-style: normal;
       } 
@@ -119,11 +119,8 @@
       #partners img { max-height: 100%; }
       #partners a { flex:0 0 auto; }
    </style>
-
-   <script src="brightjs/bright.js" type="module"></script>
-   <link rel="stylesheet" href="brightjs/bright.css"/>   
-   <script src="monarch.js" type="module"></script>
-
+   <link rel="stylesheet" href="css/bright.css"/>   
+   <script src="scripts/bundle.js" type="module"></script>
 </head>
 <body>
 
@@ -149,7 +146,7 @@
    <bright-section>
       <h2>Welcome To Pandora's Resort</h2>
       <p>Introducing Pandora's Resort: under new ownership and fully transformed from Pandora's Forest. We're open and excited to showcase our improvements. The Grand Re-Opening on Memorial Day was a hit and resort updates include a new 'after-party' room, clubhouse upgrades, renovated cabins, chalets, bathhouse, and outdoor showers. More enhancements are happening daily. Join us for themed parties every weekend and check out the ongoing improvements at Pandora's Resort. Make a reservation now and experience it firsthand.</p>
-      <bright-video src="teaser.mp4" poster="images/vidposter.webp"></bright-video>
+      <bright-video src="images/teaser.mp4" poster="images/vidposter.webp"></bright-video>
    </bright-section>
 
    <bright-section id="info" item-width="310px" item-height="400px">
@@ -271,13 +268,12 @@
    </bright-section>
 
    <bright-section id="events" item-width="440px">
-      <img src="images/flyers/20230805CircusCircus.jpg"/>
+      <img src="images/flyers/20230812TotallyTubular80s.jpg"/>
       <bright-card justify="center">
          <h2 slot="header">This Weekend at Pandora's Resort</h2>
          <p style="text-align:left">
-            Arrive at Pandora's Resort and step right up to the most exhilarating weekend of the year! The circus-themed festivities will ignite your sense of wonder and excitement. On Friday, slip into your most alluring nighties for our Sexy Nighties PJ Party. Then, on Saturday, unleash your inner performer as we transform the resort into a vibrant circus wonderland. Be the mesmerizing ringmaster, the daring acrobat, or any circus character that captivates your imagination. This weekend promises thrills, laughter, and unforgettable memories. Join us for the Big Top adventure of a lifetime!
-         </p>
-         <link-button slot="footer" href="#reservations">Reservations</link-button>
+            Get ready to journey back to the raddest decade of all at Pandora's Resort! On Friday, kick off the weekend with a classic Blue Jean Baby night, setting the stage for a stylish and chic start. Then, on Saturday, it's time to unleash your inner 80's icon as we host a Totally Tubular 80's Night! Put on your leg warmers, neon colors, and best retro outfits as we dance the night away to iconic hits and chart-topping classics. Get ready for an evening of nostalgic fun, unforgettable music, and an electrifying atmosphere as we party like it's 1985!         </p>
+         <link-button slot="footer" href="tel:931-277-1258">Reservations</link-button>
       </bright-card>
    </bright-section>
 

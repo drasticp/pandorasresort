@@ -1,0 +1,23 @@
+html, body { margin:0; height:100%; width:100%; font:var(--body-font); color:var(--body-inverse); background:var(--body-background); fill:var(--body-inverse); }
+textarea, input, select { padding:var(--input-padding); width:100%; font:var(--input-font); color:var(--input-inverse);  border:var(--input-border); border-radius:var(--input-radius); box-sizing:border-box; background:var(--input-background); outline:none; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+::placeholder { color:var(--input-inverse); opacity:0.5; }
+pre { white-space: pre-line; font:var(--body-font); color:var(--body-inverse); }
+a { text-decoration:none; }
+h1, h2, h3, h4, h5, h6 { margin-top: 0px; margin-bottom: 8px; text-align: center; vertical-align: middle; }
+button, input[type=button], input[type=submit] { cursor:pointer; display:inline-flex; align-items:center; font:var(--button-font); transition:opacity 0.5s; width:auto; text-transform:var(--button-text-transform); background:var(--button-background); padding:var(--button-padding); font-size:var(--input-font-size); border:var(--button-border); color:var(--button-inverse); border-radius:var(--button-radius); fill:var(--button-inverse); }
+button:hover, input[type=button]:hover, input[type=submit]:hover { opacity: 0.8; }
+table { border-collapse: collapse; }
+th, label { border-radius:var(--label-radius); background:var(--label-background); border:var(--label-border); text-transform:var(--label-text-transform); padding:var(--label-padding); color:var(--label-inverse); font:var(--label-font) }
+th:not(:last-child) { border-right: 1px solid var(--body-background);}
+tbody tr:not(:last-child) { border-bottom: 1px solid var(--label-background); }
+td { box-sizing:border-box; padding:8px 4px; }
+label { display:block; }
+.primary, input[type=button].primary, input[type=submit].primary { color:var(--primary-inverse); fill:var(--primary-inverse); background:var(--primary-background); }
+p { margin: 0px 0px 16px 0px; }
+figure { margin:0px; padding:0px; background:black; }
+figure img { max-width:100%; height:100%; }
+figure figcaption { display:none; }
+form { display:flex; flex-wrap:wrap; gap:4px; }
+form * { flex:1 1 200px; }
+input[type=file]::file-selector-button { display:none; }
+input[type=file] { cursor:pointer }
