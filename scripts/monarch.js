@@ -1,5 +1,5 @@
 import {LitElement, html, css} from 'lit';
-import {BrightInput, BrightSection } from 'bright';
+import {BrightInput, BrightSection } from '../brightjs/bright';
 
 export class ResizeController {
     host; 

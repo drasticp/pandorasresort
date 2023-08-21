@@ -116,11 +116,12 @@
       bright-card.col2 div pre { word-break:keep-all; }
       bright-card.col2::part(header) { flex-direction:column; }
       bright-gallery-grid.desktop { grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); }
+      bright-gallery-scroller img { max-width: 100%; }
       #splash h1 { padding-bottom:64px; line-height:1.6; }
       #partners img { max-height: 100%; }
       #partners a { flex:0 0 auto; }
    </style>
-   <link rel="stylesheet" href="css/bright.css"/>   
+   <link rel="stylesheet" href="brightjs/bright.css"/>   
    <script src="scripts/bundle.js" type="module"></script>
 </head>
 <body>
@@ -181,9 +182,6 @@
          <img src="images/gallery/playroom2.webp" title="New Red Room"/>
          <img src="images/gallery/playroom3.webp" title="New Red Room BDSM Equpment and St. Andrew's Cross"/>
          <img src="images/gallery/playroombath1.jpeg" title="Red Room Bathroom"/>
-         <!--
-         <img src="images/gallery/playroombath2.jpeg" title="Red Room Bathroom 2"/>
-         -->
          <img src="images/gallery/rvspot1.webp" title="Full Hookup RV Spots"/>
          <img src="images/gallery/cabin1.webp" title="Cozy Modern Cabins"/>
          <img src="images/gallery/cabin2.webp" title="Cozy Cabin Interior"/>
@@ -210,13 +208,14 @@
          <h2 slot="header">Memberships & Day Fees</h2>
          <center slot="header">* Holiday Rates Will Vary *</center>
          <div>
-            <b>Day Fees:</b>
+            <p>Visitors must either pay day fees OR become annual members.</p> 
+            <b>Day Fees (for non-members):</b>
             <pre>
             Per Couple&nbsp;&nbsp;&bull;&nbsp;&nbsp;$70/day
             Single Females&nbsp;&nbsp;&bull;&nbsp;&nbsp;$35/day
             Single Males&nbsp;&nbsp;&bull;&nbsp;&nbsp;$70/day * 
             </pre>
-            <b>Annual Memberships:</b>
+            <b>Annual Memberships (pay no day fees):</b>
             <pre>
             Couples&nbsp;&nbsp;&bull;&nbsp;&nbsp;$1250/year * 
             Single Males&nbsp;&nbsp;&bull;&nbsp;&nbsp;$1250/year * 
@@ -288,7 +287,16 @@
       </bright-card>
    </bright-section>
 
-   <bright-section id="events" item-width="440px">
+   <bright-section id="events">
+      <h2>Upcoming Events at Pandora's Resort</h2>
+      <bright-gallery-scroller item-width="380px" gap="8px">
+         <img src="/images/flyers/20230826TikiPoolParty.jpg"/>
+         <img src="/images/flyers/20230902LaborDayWeekend.jpg"/>
+      </bright-gallery-scroller>
+   </bright-section>
+
+   <!--
+   <bright-section id="eventsold" item-width="440px">
       <img src="/images/flyers/20230826TikiPoolParty.jpg"/>
       <bright-card justify="center">
          <h2 slot="header">This Weekend at Pandora's Resort</h2>
@@ -297,6 +305,7 @@
          <link-button slot="footer" href="tel:931-277-1258">Reservations</link-button>
       </bright-card>
    </bright-section>
+   -->
 
    <bright-section id="upcoming" item-width="700px">
       <div>
@@ -309,11 +318,6 @@
          </pre>
          <h2>Upcoming Weekend Themes</h2>
          <pre>
-            <b>July 22nd</b> - Mermaids & Pirates
-            <b>July 29th</b> - Halloween in July
-            <b>August 5th</b> - Circus! Circus!
-            <b>August 12th</b> - Totally Tubular 80's Night
-            <b>August 19th</b> - BDSM Fetish Ball
             <b>August 26th</b> - Tiki Pool Party
             <b>September 2nd</b> - Labor Day Weekend - Sexy Service Uniforms - BBQ Cookoff Sunday
             <b>September 9th</b> - 007 Bond
