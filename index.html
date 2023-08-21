@@ -95,6 +95,7 @@
       #footer a { color:white; }
       bright-nav a { margin:16px; font-size: 18px; font-weight: 500; }
       bright-nav img { padding:24px; }
+      bright-nav.mobile a { color:black; }
       bright-section { margin-bottom:64px; }
       social-bar icon-link { padding:4px; }
       social-bar.desktop { flex-direction:column; position:fixed; right:16px; top:50%; translate:0%, -50%; }
@@ -145,7 +146,7 @@
 
    <bright-section>
       <h2>Welcome To Pandora's Resort</h2>
-      <p>Introducing Pandora's Resort: under new ownership and fully transformed from Pandora's Forest. We're open and excited to showcase our improvements. The Grand Re-Opening on Memorial Day was a hit and resort updates include a new 'after-party' room, clubhouse upgrades, renovated cabins, chalets, bathhouse, and outdoor showers. More enhancements are happening daily. Join us for themed parties every weekend and check out the ongoing improvements at Pandora's Resort. Make a reservation now and experience it firsthand.</p>
+      <p>Introducing Pandora's Resort: under new ownership and fully transformed from Pandora's Forest. We're open and excited to showcase our improvements. The Grand Re-Opening on Memorial Day was a hit and resort updates include a the tantalizing new Red Room play space, clubhouse upgrades, renovated cabins, chalets, bathhouse, and outdoor showers. More enhancements are happening daily. Join us for themed parties every weekend and check out the ongoing improvements at Pandora's Resort. Make a reservation now and experience it firsthand.</p>
       <bright-video src="images/teaser.mp4" poster="images/vidposter.webp"></bright-video>
    </bright-section>
 
@@ -157,7 +158,7 @@
       </bright-card>
       <bright-card>
          <h2 slot="header">Amenities</h2>
-         <p>Take a dip in our heated pool or relax in the hot tub. Soak in the rays on our sun deck. Grab a bite at the poolside cafe. Enjoy a campfire or game of cornhole with friends.</p>
+         <p>Take a dip in our heated pool or relax in the hot tub. Soak in the rays on our sun deck. Grab a bite at the poolside cafe. Endulge in Pandora's new Red Room. Enjoy a campfire or game of cornhole with friends.</p>
          <link-button slot="footer" href="#gallery">Gallery</link-button>
       </bright-card>
       <bright-card>
@@ -172,17 +173,36 @@
       <bright-gallery-grid>
          <img src="images/gallery/pool.webp" title="Large Heated Pool"/>
          <img src="images/gallery/hottub.webp" title="Big Hot Tub"/>
+         <img src="images/gallery/poolsidecafe.jpeg" title="Poolside Cafe"/>
          <img src="images/gallery/clubhouse1.webp" title="Clubhouse With Large Dancefloor"/>
          <img src="images/gallery/clubhouse2.webp" title="Clubhouse BYOB Bar"/>
          <img src="images/gallery/clubhouse3.webp" title="Clubhouse Pool Table and Darts"/>
-         <img src="images/gallery/playroom1.webp" title="New After Party Room With Big Queen Beds"/>
-         <img src="images/gallery/playroom2.webp" title="New After Party Room"/>
-         <img src="images/gallery/playroom3.webp" title="New After Party Room BDSM Equpment and St. Andrew's Cross"/>
+         <img src="images/gallery/playroom1.webp" title="New Red Room With Big Queen Beds"/>
+         <img src="images/gallery/playroom2.webp" title="New Red Room"/>
+         <img src="images/gallery/playroom3.webp" title="New Red Room BDSM Equpment and St. Andrew's Cross"/>
+         <img src="images/gallery/playroombath1.jpeg" title="Red Room Bathroom"/>
+         <!--
+         <img src="images/gallery/playroombath2.jpeg" title="Red Room Bathroom 2"/>
+         -->
+         <img src="images/gallery/rvspot1.webp" title="Full Hookup RV Spots"/>
          <img src="images/gallery/cabin1.webp" title="Cozy Modern Cabins"/>
          <img src="images/gallery/cabin2.webp" title="Cozy Cabin Interior"/>
          <img src="images/gallery/chalet1.webp" title="Rustic Chalets"/>
-         <img src="images/gallery/rvspot1.webp" title="Full Hookup RV Spots"/>
+         <img src="images/gallery/showerhouse.jpeg" title="Renovated Shower House"/>
       </bright-gallery-grid>
+   </bright-section>
+
+   <bright-section id="cafe" item-width="490px">
+      <bright-card justify="center">
+         <h2 slot="header">Poolside Cafe Now Open</h2>
+         <pre>
+            Enjoy tasty grubs as you lounge by the pool.
+
+            Cafe Hours: Fri 12p - 6p, Sat 8a - 10p, Sun 8a - 2p
+         </pre>
+         <link-button slot="footer" href="cafemenu.pdf">Cafe Menu</link-button>
+      </bright-card>
+      <img src="/images/gallery/poolsidecafe.jpeg"/>
    </bright-section>
 
    <bright-section id="rates" background="images/backgroundbwsexy.webp" item-width="340px" style="padding:32px 0px;">
@@ -269,25 +289,23 @@
    </bright-section>
 
    <bright-section id="events" item-width="440px">
-      <img src="images/flyers/20230819BDSMFetishBall.jpg"/>
+      <img src="/images/flyers/20230826TikiPoolParty.jpg"/>
       <bright-card justify="center">
          <h2 slot="header">This Weekend at Pandora's Resort</h2>
          <p style="text-align:left">
-            Indulge in your wildest fantasies and explore your adventurous side at Pandora's Resort! Friday night's Sexy Nighties PJ Party will set the tone for a weekend of daring exploration. On Saturday, the BDSM - Fetish Ball will offer a safe and thrilling space to embrace your kinks and fetishes. Discover a world of pleasure, playfulness, and consensual exploration alongside like-minded individuals. Whether you're a seasoned participant or a curious newcomer, this weekend will leave you with unforgettable experiences and connections. Let your inhibitions go, and let Pandora's Resort be your playground of desire.
-         </p>
+            Prepare for a weekend of ultimate fun and indulgence at Pandora's Resort! On Friday, make a bold statement with our Boobs and Booze dress to impress night, setting the stage for an evening of revelry. Then, on Saturday, dive into a tropical paradise as we host a Tiki Pool Party like no other! Embrace the spirit of aloha with vibrant Hawaiian attire, floral patterns, and exotic cocktails that will transport you to an island oasis.The resort will be transformed into a sun-soaked haven of delight, complete with poolside fun, and the lively rhythms of the tropics. Lounge by the pool, sip on refreshing drinks, and dance the night away. It's a day of relaxation and jubilation, surrounded by the company of like-minded friends.         </p>
          <link-button slot="footer" href="tel:931-277-1258">Reservations</link-button>
       </bright-card>
    </bright-section>
 
    <bright-section id="upcoming" item-width="700px">
       <div>
-         <h2>Recurring Events</h2>
+         <h2>Recurring Weekly Events</h2>
          <pre>
             <b>Wednesdays</b> - Newbie Night (1/2 price day fee)
-            <b>Thursdays</b> - TBD
-            <b>Fridays</b> - Themes: Dress to Impress, Little Black Dress, Sexy Nighties PJ Party, or Blue Jean Baby
-            <b>Saturdays</b> - Pool Volleyball, Cornhole, Party Theme night
-            <b>Sundays</b> - Karaoke at 6 pm
+            <b>Fridays</b> - Boobs and Booze - Dress to Impress
+            <b>Saturdays</b> - Pool Volleyball, Cornhole, Party Theme Night
+            <b>Sundays</b> - Karaoke at 2 pm
          </pre>
          <h2>Upcoming Weekend Themes</h2>
          <pre>
@@ -296,7 +314,7 @@
             <b>August 5th</b> - Circus! Circus!
             <b>August 12th</b> - Totally Tubular 80's Night
             <b>August 19th</b> - BDSM Fetish Ball
-            <b>August 26th</b> - Pineapple Luau & Cookout
+            <b>August 26th</b> - Tiki Pool Party
             <b>September 2nd</b> - Labor Day Weekend - Sexy Service Uniforms - BBQ Cookoff Sunday
             <b>September 9th</b> - 007 Bond
             <b>September 16th</b> - Naughty School Girls & Dirty Teachers
@@ -311,10 +329,10 @@
             <b>November 18th</b> - Harvest Moon - Witches & Bitches
             <b>November 23rd</b> - Thanksgiving Weekend - Indians & Pilgrims - Friendsgiving Potluck on Thursday
             <b>December 2nd</b> - Walt Disney's Birthday - Dirty Disney
-            <b>December 9th</b> - Diamonds & Pearls
+            <b>December 9th</b> - Christmas Weekend - Mele Kalikimaka- Ugly Sweater, Dirty Santa, & Potluck
             <b>December 16th</b> - White Out
-            <b>December 23rd</b> - Christmas Weekend - Mele Kalikimaka- Ugly Sweater, Dirty Santa, & Potluck
-            <b>January 1st</b> - New Year's Weekend - Masquerade Ball (formal) - Catered, Cake & Champagne Toast, Prize Balloon Drop
+            <b>December 23rd</b> - Diamonds and Pearls
+            <b>December 31st</b> - New Year's Weekend - Masquerade Ball (formal) - Catered, Cake & Champagne Toast, Prize Balloon Drop
          </pre>
       </div>
    </bright-section>
