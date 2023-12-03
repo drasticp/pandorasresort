@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "bright": "bitbucket:trashlabs/brightjs",
-    "lit": "^2.8.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
-  }
-}
