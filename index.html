@@ -120,6 +120,7 @@
       #splash h1 { padding-bottom:64px; line-height:1.6; }
       #partners img { max-height: 100%; }
       #partners a { flex:0 0 auto; }
+      #info div * { flex:1 1 50%; }
    </style>
    <link rel="stylesheet" href="brightjs/bright.css"/>   
    <script src="scripts/bundle.js" type="module"></script>
@@ -193,6 +194,7 @@
       </bright-gallery-grid>
    </bright-section>
 
+   <!--
    <bright-section id="cafe" item-width="490px">
       <bright-card justify="center">
          <h2 slot="header">Poolside Cafe Now Open</h2>
@@ -204,6 +206,7 @@
       </bright-card>
       <img src="/images/gallery/poolsidecafe.jpg"/>
    </bright-section>
+   -->
 
    <bright-section id="gallery">
       <h2>Special Offers</h2>
@@ -339,8 +342,36 @@
             <b>March 16</b> - St. Patty's Day 
             <b>March 23</b> - Second Chance Prom
             <b>March 30</b> - Playboy Hefs and Bunnies
+            <b>April 6</b> - 50 Shades of Sin
+            <b>April 13</b> - Pimps & Hoes!
+            <b>April 20</b> - Woodstock Hippies
+            <b>April 27</b> - Game of Thrones: Valhalla Vikings
+            <b>May 4</b> - May the Fourth Be With You! (Star Wars)
          </pre>
       </div>
+   </bright-section>
+
+   <h2>Important Information</h2></br>&nbsp;
+   <bright-section id="important" item-width="310px" item-height="340px">
+
+      <bright-card>
+         <h2 slot="header">Single Males</h2>
+         <p>All single males must complete an application to attend. Applications will be evaluated and notified when there are available slots.</p>
+         <link-button slot="footer" href="maleform.html">Single Male Application</link-button>
+      </bright-card>
+
+      <bright-card>
+         <h2 slot="header">FAQ</h2>
+         <p>New to nudisim or the swinging lifestyle? Check out our frequently asked questions to find out what to expect and what's expected of you.</p>
+         <link-button slot="footer" href="/documents/FAQ.pdf">Frequently Asked Questions</link-button>
+      </bright-card>
+
+      <bright-card>
+         <h2 slot="header">Nearby Attractions</h2>
+         <p>Golf, hiking, live music, antiques, and more. Crossville has a lot to offer. Check out these nearby attractions during your visit.</p>
+         <link-button slot="footer" href="/documents/Nearby Attractions.pdf">Nearby Attractions</link-button>
+      </bright-card>
+         
    </bright-section>
   
    <bright-section id="contact" justify="center" item-width="340px" background="images/backgroundredsexy.webp" style="padding:32px 0px;">
